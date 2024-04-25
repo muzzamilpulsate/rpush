@@ -36,6 +36,7 @@ module Rpush
         protected
 
         def handle_response(response)
+          log_info("notification #{@notification.id} - device_token - #{@notification.device_token} - response code - #{response.code.to_i}")
           case response.code.to_i
           when 200
             ok
